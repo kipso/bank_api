@@ -1,0 +1,22 @@
+version: '3'
+services:
+
+  server:
+    build: ./
+    image: kipso/bank
+    command: "./wait-for-it.sh postgres:5432 -t 30 -- npm start"
+    volumes:
+      - express_data
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+
+  postgres:
+    image: 'postgres:latest'
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=1003112
+      - POSTGRES_USER=kipso
+      - POSTGRES_DB=proj

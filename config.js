@@ -4,7 +4,7 @@ module.exports= {
         "password" : "1003112",
         "database" : "proj",
         "dialect"  : "postgres",
-        "host"	   : "localhost"
+        "host"	   : "postgres"
     },
     "jwt":{
         "secret": 'worldisfullofdevelopers'
